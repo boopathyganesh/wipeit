@@ -1,11 +1,11 @@
 {
-  "name": "wipeit",
+  "name": "nm-wipe",
   "version": "1.0.0",
   "description": "Interactive node_modules cleaner CLI for macOS",
   "author": "Boopathy Ganesh K <boopathyganesh95@gmail.com>",
   "type": "module",
   "bin": {
-    "wipeit": "./dist/index.js"
+    "nm-wipe": "./dist/index.js"
   },
   "scripts": {
     "build": "tsc",

@@ -1,8 +1,8 @@
-# wipeit
+# nm-wipe
 
 Interactive `node_modules` cleaner CLI for macOS and Linux.
 
-`wipeit` scans a directory tree for `node_modules` folders, lets you interactively filter and select them, and then deletes them (or simulates deletion in dry‑run mode). It’s designed to safely reclaim disk space from old projects.
+`nm-wipe` scans a directory tree for `node_modules` folders, lets you interactively filter and select them, and then deletes them (or simulates deletion in dry‑run mode). It’s designed to safely reclaim disk space from old projects.
 
 > **Warning**  
 > This tool deletes directories. Always start with `--dry-run` until you’re comfortable with what it will remove.
@@ -10,19 +10,19 @@ Interactive `node_modules` cleaner CLI for macOS and Linux.
 ## Install
 
 ```bash
-npm install -g wipeit
+npm install -g nm-wipe
 # or
-pnpm add -g wipeit
+pnpm add -g nm-wipe
 # or
-yarn global add wipeit
+yarn global add nm-wipe
 ```
 
-After installation you’ll have a `wipeit` binary on your PATH.
+After installation you’ll have an `nm-wipe` binary on your PATH.
 
 ## Usage
 
 ```bash
-wipeit [root] [--dry-run]
+nm-wipe [root] [--dry-run]
 ```
 
 - **`root`** (optional): directory to scan.  
@@ -35,18 +35,18 @@ wipeit [root] [--dry-run]
 
 ```bash
 # Safely preview what would be deleted under ~/Desktop
-wipeit --dry-run
+nm-wipe --dry-run
 
 # Scan a specific projects folder (recommended: first run with --dry-run)
-wipeit ~/dev --dry-run
+nm-wipe ~/dev --dry-run
 
 # Actually delete selected node_modules under ~/dev
-wipeit ~/dev
+nm-wipe ~/dev
 ```
 
 ## Interactive flow
 
-1. **Scan**: `wipeit` scans `root` (default `~/Desktop`) up to a configurable depth for `node_modules` folders.
+1. **Scan**: `nm-wipe` scans `root` (default `~/Desktop`) up to a configurable depth for `node_modules` folders.
 2. **Filter & sort**:
    - Filter by:
      - **Path segment** (e.g. `Axon`, `core`, `cenizaslabs-ai`).
@@ -60,7 +60,7 @@ wipeit ~/dev
    - Use the checkbox UI to select which `node_modules` folders to delete.
    - Read‑only or no‑access directories are shown but disabled.
 4. **Confirm**:
-   - `wipeit` shows how many folders are selected and an approximate total size to be freed.
+   - `nm-wipe` shows how many folders are selected and an approximate total size to be freed.
    - You must confirm before anything is deleted.
 5. **Wipe**:
    - Deletions run one by one with a progress spinner.
@@ -72,7 +72,7 @@ wipeit ~/dev
   Maximum directory depth to scan from the root (default `8`, hard‑capped at `50`).
 
   ```bash
-  WIPEIT_DEPTH=12 wipeit ~/dev --dry-run
+  WIPEIT_DEPTH=12 nm-wipe ~/dev --dry-run
   ```
 
 ## Safety characteristics
